@@ -12,31 +12,69 @@
     <div id="container">
 
 
-      <div id="relogio1"></div>
+        <div id="relogio1">
 
 
-        <div id="horas1"> </div>
-        <span id="separador1"> : </span>
+            <div id="horas1"> </div>
+            <span id="separador1"> : </span>
 
-        <div id="minutos1"></div>
-        <span id="separador1">:</span>
+            <div id="minutos1"></div>
+            <span id="separador1">:</span>
 
-        <div id="segundos1"> </div>
+            <div id="segundos1"> </div>
+
+        </div>
 
 
-      <div id="relogio2"></div>
+        <div id="relogio2">
 
 
-        <div id="horas2"> </div>
-        <span id="separador2"> : </span>
+            <div id="horas2"> </div>
+            <span id="separador2"> : </span>
 
-        <div id="minutos2"></div>
-        <span id="separador2">:</span>
+            <div id="minutos2"></div>
+            <span id="separador2">:</span>
 
-        <div id="segundos2"> </div>
+            <div id="segundos2"> </div>
+
+        </div>
+
+
 
     </div>
 
+    <div id="containerR3R4">
+
+
+        <div id="relogio3">
+
+
+            <div id="horas3"> </div>
+            <span id="separador3"> : </span>
+
+            <div id="minutos3"></div>
+            <span id="separador3">:</span>
+
+            <div id="segundos3"> </div>
+
+        </div>
+
+
+        <div id="relogio4">
+
+
+            <div id="horas4"> </div>
+            <span id="separador4"> : </span>
+
+            <div id="minutos4"></div>
+            <span id="separador4">:</span>
+
+            <div id="segundos4"> </div>
+
+        </div>
+
+
+    </div>
 
     <script>
 
@@ -79,26 +117,93 @@
 
     </script>
 
+    <script>
+
+        const horas3 = document.getElementById('horas3')
+        const minutos3 = document.getElementById('minutos3')
+        const segundos3 = document.getElementById('segundos3')
+        const relogio3 = setInterval(function time() {
+            let tempo = new Date()
+            let h = tempo.getHours()
+            let m = tempo.getMinutes()
+            let s = tempo.getSeconds()
+
+            if (h < 10) h = '0' + h
+            if (m < 10) m = '0' + m
+            if (s < 10) s = '0' + s
+
+            horas3.textContent = h
+            minutos3.textContent = m
+            segundos3.textContent = s
+        });
+
+
+        const horas4 = document.getElementById('horas4')
+        const minutos4 = document.getElementById('minutos4')
+        const segundos4 = document.getElementById('segundos4')
+        const relogio4 = setInterval(function time() {
+            let tempo = new Date()
+            let h = tempo.getHours()
+            let m = tempo.getMinutes()
+            let s = tempo.getSeconds()
+
+            if (h < 10) h = '0' + h
+            if (m < 10) m = '0' + m
+            if (s < 10) s = '0' + s
+
+            horas4.textContent = h
+            minutos4.textContent = m
+            segundos4.textContent = s
+        });
+
+    </script>
+    
+
     <style>
         #container {
             display: flex;
             justify-content: center;
             font-size: 30px;
-
-
-
         }
 
         #relogio1 {
-            background-color: black;
-            color: white;
+            display: flex;
+            font-size: larger;
+            width: 160px;
         }
 
         #relogio2 {
-           margin-left: 50px;
-           border-radius: 20px;
-           box-shadow: 1px 1px 1px 1px black;
-           width: 10px;
+            border-radius: 5px;
+            box-shadow: 1px 1px 1px 1px black;
+            width: 140px;
+            display: flex;
+            justify-content: center;
+            font-size: larger;
+        }
+
+        #containerR3R4 {
+            display: flex;
+            justify-content: center;
+            font-size: 30px;
+        }
+
+        #relogio3{
+            display: flex;
+            justify-content: center;
+            width: 170px;
+            font-size: larger;
+
+
+        }
+
+        #relogio4{
+            display: flex;
+            justify-content: center;
+            width: 170px;
+            font-size: larger;
+
+
+
 
         }
     </style>
